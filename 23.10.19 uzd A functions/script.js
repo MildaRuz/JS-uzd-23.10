@@ -66,10 +66,6 @@ const withoutPrimes = masyvas2.filter((j) => {
 //kuris generuojamas pagal tokią pat salygą kaip ir pirmasis masyvas.
 //Viską pakartokite atsitiktinį nuo 10 iki 30  kiekį kartų.
 // Paskutinio masyvo paskutinis elementas yra lygus 0;
-function masyvasPagr2(number) {
-  let length = rand(10, 20);
-  return number > 0 ? Array.from({ length }, (_, i) => (i === length - 1 ? masyvasPagr2(number - 1) : rand(0, 10))) : 0;
-}
 
 function masyvasPagr(number) {
   if (number > 0) {
@@ -83,7 +79,7 @@ function masyvasPagr(number) {
   }
   return 0;
 }
-const skaiciuMasyvas = masyvasPagr2(2);
+const skaiciuMasyvas = masyvasPagr(rand(10, 30));
 //console.log(skaiciuMasyvas);
 
 //----- 8 uzd ------

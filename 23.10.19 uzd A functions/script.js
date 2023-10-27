@@ -22,7 +22,7 @@ const howMuchDivisors = (number) => {
   return result.length;
 };
 
-console.log(howMuchDivisors(8));
+//console.log(howMuchDivisors(8));
 
 //----- 5 uzd ------
 function rand(min, max) {
@@ -37,7 +37,7 @@ let dydis = 100;
 for (let i = 0; i < dydis; i++) {
   masyvas[i] = rand(33, 77);
 }
-console.log(masyvas);
+//console.log(masyvas);
 
 const filterDivisors = masyvas.filter((i) => {
   return howMuchDivisors(i);
@@ -67,20 +67,20 @@ const withoutPrimes = masyvas2.filter((j) => {
 //Viską pakartokite atsitiktinį nuo 10 iki 30  kiekį kartų.
 // Paskutinio masyvo paskutinis elementas yra lygus 0;
 
-function masyvasPagr(number) {
-  if (number > 0) {
+function masyvasPagr(iterationsNumber) {
+  if (iterationsNumber > 0) {
     let masyvas3 = [];
     let dydis3 = rand(10, 20);
     for (let j = 0; j < dydis3 - 1; j++) {
       masyvas3[j] = rand(0, 10);
     }
-    masyvas3.push(masyvasPagr(number - 1));
+    masyvas3.push(masyvasPagr(iterationsNumber - 1));
     return masyvas3;
   }
   return 0;
 }
 const skaiciuMasyvas = masyvasPagr(rand(10, 30));
-//console.log(skaiciuMasyvas);
+console.log(skaiciuMasyvas);
 
 //----- 8 uzd ------
 // Suskaičiuokite septinto uždavinio elementų, kurie nėra masyvai, sumą.
@@ -138,7 +138,7 @@ while (
   array.push(rand(1, 33));
 }
 
-console.log(array);
+//console.log(array);
 
 //----- 10 uzd ------
 //Sugeneruokite masyvą iš 10 elementų, kurie yra masyvai iš 10 elementų,

@@ -41,7 +41,8 @@ pinigine1.skaiciuoti();
 //kuris į konsolę išvestų troleibusu važiuojančių keleivių skaičių. Atkreipkite dėmesį,
 //kad troleibusu važiuoti neigiamas keleivių skaičius negali.
 class Troleibusas {
-  constructor() {
+  constructor(number) {
+    this.number = number;
     this.keleiviuSkaicius = 0;
   }
   ilipa(keleiviuSkaicius) {
@@ -52,12 +53,17 @@ class Troleibusas {
       this.keleiviuSkaicius = 0;
     } else this.keleiviuSkaicius -= keleiviuSkaicius;
   }
+
   vaziuoja() {
-    console.log(`Troleibusu važiuoja ${this.keleiviuSkaicius} keleivių`);
+    console.log(`Troleibusu nr.${this.number} važiuoja ${this.keleiviuSkaicius} keleivių`);
   }
+  //static method???
+  // keleiviuSkaiciusVisuoseTroleibusuose() {
+  //   console.log(`Bendras skaičius keleivių: `);
+  // }
 }
 
-const troleibusas11 = new Troleibusas();
+const troleibusas11 = new Troleibusas(11);
 
 troleibusas11.ilipa(10);
 troleibusas11.islipa(2);
@@ -65,4 +71,19 @@ troleibusas11.ilipa(3);
 
 troleibusas11.vaziuoja();
 
+const troleibusas22 = new Troleibusas(22);
+
+troleibusas22.ilipa(15);
+troleibusas22.ilipa(10);
+troleibusas22.islipa(29);
+
+troleibusas22.vaziuoja();
+
 //----- 4 uzd ------
+//(STATIC) Sukurti metodą keleiviuSkaiciusVisuoseTroleibusuose(),
+//kuris rodytų bendrą keleivių skaičių visuose Troleibusas objektuose.
+// Bendram kelevių skaičiaus skaičiavimui sukurkite statinį metodą
+//bendrasKeleiviuSkaicius(keleiviuSkaicius), kuris pridėtų arba atimtų keleivius
+//iš statinės savybės visiKeleiviai (kurioje yra įrašytas bendras keleivių skaičius).
+//Taip pat atitinkamai modifikuokite metodus ilipa(keleiviuSkaicius) ir
+//islipa(keleiviuSkaicius).

@@ -4,8 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>function uzd</title>
+    <style>
+      .guess {
+        border: 2px solid black;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 20px 10px;
+      }
+      button {
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
+    <form onsubmit="isThatNum(event)">
+      <input class="guess" type="number" placeholder="Spėkite skaičių" />
+      <button>Spėti</button>
+    </form>
+    <p id="text"></p>
+    <button class="newGame" onclick="isThatNum(event)">Iš naujo</button>
     <script src="script.js"></script>
+    <script src="game.js"></script>
   </body>
 </html>

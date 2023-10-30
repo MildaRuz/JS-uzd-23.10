@@ -5,8 +5,6 @@ const timer = () => {
   if (countFrom) {
     clearInterval(countFrom);
   }
-  min = 10;
-  sec = 0;
   countFrom = setInterval(() => {
     if (min === 0 && sec === 0) {
       return clearInterval(countFrom), (document.querySelector('.counter').textContent = `Time is over...`);

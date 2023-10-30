@@ -9,7 +9,7 @@ const timer = () => {
   sec = 0;
   countFrom = setInterval(() => {
     if (min === 0 && sec === 0) {
-      return clearInterval(countFrom);
+      return clearInterval(countFrom), (document.querySelector('.counter').textContent = `Time is over...`);
     }
     if (sec === 0) {
       min--;

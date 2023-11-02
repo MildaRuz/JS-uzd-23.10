@@ -12,20 +12,20 @@ function rand(min, max) {
 }
 let number = rand(0, 10);
 
-document.querySelector('.newGame').style.display = 'none';
 function goodNumber(numberGuess) {
   console.log(number);
   if (numberGuess > number) {
-    document.querySelector('#text').textContent = 'Jūsų skaičius per didelis';
+    document.querySelector('#hint-text').textContent = 'Jūsų skaičius per didelis';
     console.log('Jūsų skaičius per didelis');
   } else if (numberGuess < number) {
     console.log('Jūsų skaičius per mažas');
-    document.querySelector('#text').textContent = 'Jūsų skaičius per mažas';
+    document.querySelector('#hint-text').textContent = 'Jūsų skaičius per mažas';
   } else if (numberGuess == number) {
-    document.querySelector('form').textContent = 'Sveikiname atspėjote skaičių!';
-    document.querySelector('#text').style.display = 'none';
-    console.log('Sveikiname atspėjote skaičių!');
-    document.querySelector('.newGame').style.display = 'flex';
+    document.querySelector('form').classList.add('hidden');
+    document.querySelector('#success-message').classList.remove('hidden');
+    document.querySelector('#hint-text').textContent = '';
+    document.querySelector('.newGame').classList.remove('hidden');
+    document.querySelector('form').reset();
   }
 }
 
@@ -37,4 +37,11 @@ const isThatNum = (el) => {
   numberGuess = guess;
   goodNumber(numberGuess);
   console.log(`spetas skaicius... ${numberGuess}`);
+};
+
+const newGame = () => {
+  number = rand(0, 10);
+  document.querySelector('form').classList.remove('hidden');
+  document.querySelector('#success-message').classList.add('hidden');
+  document.querySelector('.newGame').classList.add('hidden');
 };

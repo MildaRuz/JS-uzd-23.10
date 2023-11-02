@@ -46,7 +46,7 @@ allNew.forEach((item) => (item.style.textDecoration = 'underline'));
 
 //f) Suskaičiuoti kiek yra gyvūnų kategorijų ir žirafų (jos yra ul tagai);
 const kiekKategoriju = document.querySelectorAll('ul').length;
-const kiekZirafu = document.querySelectorAll('#zirafos > li').length - 1;
+const kiekZirafu = document.querySelectorAll('#zirafos > li:not(.like-button)').length;
 console.log('kategorijų:', kiekKategoriju, `žirafų:`, kiekZirafu);
 
 //g) Tagus ul apibraukite rėmeliais ir uždėkite 15px paddingą viršuje ir apačioje
@@ -56,5 +56,13 @@ document.querySelectorAll('ul').forEach((el) => (el.style.border = '1px solid bl
 document.querySelectorAll('ul').forEach((el) => (el.style.padding = '15px 50px'));
 
 //h) Suskaičiuoti kiek yra naujų gyvūnų (su klase new);
-console.log(allNew.length - 1); //-1 o ka daryt :DDD
+console.log(document.querySelectorAll('.animals .new').length);
 //i) Suskaičiuoti atskirai kiek yra naujų gyvūnų kiekvienoje kategorijoje;
+const kiekNaujuZirafu = document.querySelectorAll('#zirafos .new').length;
+const kiekNaujuPlesrunu = document.querySelectorAll('#plesrunai .new').length;
+const kiekNaujuGyvaciu = document.querySelectorAll('#gyvates .new').length;
+const kiekNaujuZoliaedziu = document.querySelectorAll('#zoliaedziai .new').length;
+
+console.log(
+  `Naujų žirafų: ${kiekNaujuZirafu}, naujų plėšrūnų: ${kiekNaujuPlesrunu}, naujų gyvačių: ${kiekNaujuGyvaciu}, naujų žoliaėdžių: ${kiekNaujuZoliaedziu}`
+);

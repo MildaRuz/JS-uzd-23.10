@@ -1,0 +1,61 @@
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  position: absolute;
+}
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.start-game-container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  margin: 50px;
+  width: 400px;
+  height: 400px;
+  background-color: dodgerblue;
+  margin: 50px auto;
+  padding: 30px;
+}
+.game-title,
+.final-result {
+  padding: 30px;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  background-color: rgb(4, 60, 117);
+  color: rgb(78, 162, 246);
+  font-family: 'Lucida Sans', 'Lucida Grande', Verdana;
+}
+.game-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.round-time {
+  width: 60px;
+}
+.round-results-title {
+  width: 100px;
+}
+.round-results {
+  font-size: smaller;
+  line-height: 2;
+}
+.game-square {
+  border: 1px solid black;
+  width: 460px;
+  height: 460px;
+  padding: 1px;
+  margin: 0 10px;
+  position: relative;
+}
+.hide {
+  display: none;
+}

@@ -52,22 +52,19 @@ console.log(arraySortDesc(niceArray));
 let array2 = [3, 'a', 4, 'b', [1, 2], true, false, true, { a: 1, b: 3 }];
 
 const arrayTypeof = (arr, type) => {
-  return arr.filter((item) => typeof item === typeof type);
+  return arr.filter((item) => {
+    if (type === 'array') {
+      return Array.isArray(item);
+    }
+    if (type === 'object' && Array.isArray(item)) {
+      return false;
+    }
+    return typeof item === type;
+  });
 };
 
-console.log(arrayTypeof(array2, 0));
-console.log(arrayTypeof(array2, ''));
-console.log(arrayTypeof(array2, false));
-console.log(arrayTypeof(array2, []));
-//----- 6 uzd ------
-//Sukurkite mini žaidimą kuriame atėjęs žmogus galėtų spėti skaičių
-//kurį sugalvojo kompiuteris. Jei spėtas skaičius per didelis išmeskite žinutę
-//„Jūsų skaičius per didelis“. Taip pat jei ir skaičius per mažas.
-//Atspėjus skaičių turite parašyti pasveikinimo žinutę ir pradėti
-//žaidimą iš naujo.
-
-function rand(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+console.log(arrayTypeof(array2, 'number'));
+console.log(arrayTypeof(array2, 'string'));
+console.log(arrayTypeof(array2, 'boolean'));
+console.log(arrayTypeof(array2, 'array'));
+console.log(arrayTypeof(array2, 'object'));

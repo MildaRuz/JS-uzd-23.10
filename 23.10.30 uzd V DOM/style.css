@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto;
+  margin: 10px auto;
+}
+
+img {
+  width: 220px;
+  height: 200px;
+  object-fit: cover;
+}
+.img-discount {
+  position: relative;
+  margin-top: 25px;
+}
+.discount-percentage {
+  width: fit-content;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  justify-content: end;
+  background-color: rgb(240, 33, 33);
+  color: white;
+  padding: 4px;
+  font-size: smaller;
+}
+.container {
+  width: 200vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 2px solid rgb(232, 230, 230);
+  margin: 15px;
+}
+
+.description-text {
+  width: 350px;
+  color: grey;
+  font-size: smaller;
+}
+
+.title-blue {
+  margin-top: 25px;
+  color: rgb(90, 206, 245);
+}
+.price {
+  font-size: larger;
+  padding-top: 25px;
+}
+.price-lower {
+  color: crimson;
+  font-size: larger;
+  padding-top: 25px;
+}
+.price-button {
+  width: 180px;
+}
+.price-old {
+  text-decoration: line-through;
+  color: rgb(192, 190, 190);
+  display: inline;
+}
+button {
+  border: none;
+  background: rgb(245, 209, 3);
+  border-radius: 3px;
+  padding: 10px 50px;
+  margin-top: 30px;
+}
+
+.bi-star-fill {
+  color: rgb(192, 190, 190);
+}
+.stars {
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.active-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.bi-yellow {
+  color: rgba(243, 201, 51, 0.931);
+  overflow: hidden;
+}

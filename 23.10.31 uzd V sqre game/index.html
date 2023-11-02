@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>square game</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="start-game-container">
+        <p class="game-title">Pagauk kvadratą žaidimas</p>
+        <div class="final-result hide"></div>
+        <button class="start-button" onclick="startGame()">Pradėti žaidimą</button>
+      </div>
+      <div class="game-container hide">
+        <div class="game-square">
+          <div class="box"></div>
+        </div>
+        <div class="round-time"></div>
+        <div class="round-results-title">Rezultatai:</div>
+        <div class="round-results"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

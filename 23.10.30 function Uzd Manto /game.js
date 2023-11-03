@@ -13,7 +13,7 @@ function rand(min, max) {
 let number = rand(0, 10);
 
 function goodNumber(numberGuess) {
-  console.log(number);
+  //console.log(number);
   if (numberGuess > number) {
     document.querySelector('#hint-text').textContent = 'Jūsų skaičius per didelis';
     console.log('Jūsų skaičius per didelis');

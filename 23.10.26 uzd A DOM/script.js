@@ -163,7 +163,7 @@ const newPriceSenjorai = document.createElement('h2');
 const newPriceSenjoraiContent = document.createTextNode('Senjorai tik: 1.99 eur');
 newPriceSenjorai.appendChild(newPriceSenjoraiContent);
 const curH2 = document.querySelector('.prices');
-document.body.insertBefore(newPriceSenjorai, curH2);
+curH2.appendChild(newPriceSenjorai);
 
 newPriceSenjorai.classList.add('price-tag');
 newPriceSenjorai.classList.add('small');
@@ -174,10 +174,10 @@ const newPriceSenGrupe = document.createElement('h2');
 const newPriceSenGrupeContent = document.createTextNode('Senjorų grupė iki 10: tik 5.99 eur');
 newPriceSenGrupe.appendChild(newPriceSenGrupeContent);
 const currentPriceGroup = document.querySelector('.prices');
-document.body.insertBefore(newPriceSenGrupe, currentPriceGroup);
+currentPriceGroup.appendChild(newPriceSenGrupe);
+
 newPriceSenGrupe.classList.add('price-tag');
 newPriceSenGrupe.classList.add('small');
-const newGrupe = newPriceSenGrupe.classList.add('new');
 
 newPriceSenGrupe.addEventListener('click', () => {
   newPriceSenGrupe.style.color = 'green';
@@ -206,3 +206,30 @@ dislike.forEach((item) => {
 //analogišką html tagų struktūrą kaip ir HEADER 1 ir HEADER 2.
 //Pirmas mygtukas vadintųsi, “Pabraukti H1 tagą”, o antras “Nepabraukti H1 tagą”.
 //Mygtukai turi daryti tai kas ant jų parašyta
+
+const header3 = document.createElement('fieldset');
+const header3Leg = document.createElement('legend');
+header3.appendChild(header3Leg);
+const header3title = document.createTextNode('HEADER 3');
+header3Leg.appendChild(header3title);
+
+document.querySelectorAll('fieldset')[1].after(header3);
+
+const header3ButtonDo = document.createElement('button');
+const header3ButtonDoText = document.createTextNode('Pabraukti H1 tagą');
+header3ButtonDo.appendChild(header3ButtonDoText);
+
+const header3ButtonUnDo = document.createElement('button');
+const header3ButtonUnDoText = document.createTextNode('Nebraukti H1 tagą');
+header3ButtonUnDo.appendChild(header3ButtonUnDoText);
+
+header3.appendChild(header3ButtonDo);
+header3.appendChild(header3ButtonUnDo);
+
+header3ButtonDo.addEventListener('click', () => {
+  h1.style.textDecoration = 'underline';
+});
+
+header3ButtonUnDo.addEventListener('click', () => {
+  h1.style.textDecoration = 'none';
+});
